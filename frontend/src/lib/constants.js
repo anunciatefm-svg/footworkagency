@@ -16,7 +16,6 @@ export const LINKS = {
 export const PLAYER_CATEGORIES = [
   "Primera División",
   "Sub-19",
-  "Sub-18",
   "Sub-17",
   "Sub-16",
   "Sub-15",
@@ -103,9 +102,8 @@ export const FALLBACK_PLAYERS = [
     "Julio Gadea","Emanuel Sainz","Thiago Rodriguez","Tomás Rodriguez","Santiago Prieto",
     "Lucas Ferreira","Felipe Sosa","Fabricio Resende","Matias Lescano","Dilan Ilarraz",
     "Facundo Almeida","Joaquin Parceriza","Santiago Borges","Kevin Hernandez","Lautaro Silva",
-    "Felipe Suhr","Agustina Alvez",
+    "Felipe Suhr","Agustina Alvez","Juan Manuel Brito",
   ], "Sub-19", 200),
-  ...buildFallback(["Juan Manuel Brito"], "Sub-18", 300),
   ...buildFallback([
     "Enzo Espinel","Felipe Ramirez","Augusto Suarez","Franco Lasalvia","Mateo Ramos",
   ], "Sub-17", 400),
