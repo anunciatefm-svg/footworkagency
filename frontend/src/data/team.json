@@ -1,0 +1,173 @@
+[
+  {
+    "id": "emiliano",
+    "name": "Emiliano Martínez",
+    "role": "Director Ejecutivo",
+    "bio": "Lidera la planificación, gestión y desarrollo del área deportiva, trabajando en la construcción de oportunidades y el acompañamiento integral de futbolistas.",
+    "linkedin_url": "https://uy.linkedin.com/in/emiliano-martinez-ab323820",
+    "photo_url": null,
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "mauro",
+    "name": "Mauro Alonso",
+    "role": "Subdirector General · Agente FIFA Argentina · Dirección Operativa",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "fernando",
+    "name": "Fernando Flori",
+    "role": "Agente FIFA · Socio Estratégico Argentina",
+    "featured": false,
+    "order": 3
+  },
+  {
+    "id": "matias-cerdeira",
+    "name": "Matías Cerdeira",
+    "role": "Jefe de Scouting",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "lara-fierro",
+    "name": "Lara Fierro",
+    "role": "Directora Clínica Aurum",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "norber-gnocci",
+    "name": "Norber Gnocci",
+    "role": "Neurociencia · Coach Deportivo",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "belen-fernandez",
+    "name": "Belén Fernández",
+    "role": "Abogada · Derecho Deportivo",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "sandra-sicilia",
+    "name": "Sandra Sicilia",
+    "role": "Abogada",
+    "featured": false,
+    "order": 8
+  },
+  {
+    "id": "federico-borreiro",
+    "name": "Federico Borreiro",
+    "role": "Intermediario",
+    "featured": false,
+    "order": 9
+  },
+  {
+    "id": "facundo-alvarez",
+    "name": "Facundo Álvarez",
+    "role": "Comunicación · Community Manager",
+    "featured": false,
+    "order": 10
+  },
+  {
+    "id": "facundo-fierro",
+    "name": "Facundo Fierro",
+    "role": "Diseño Gráfico",
+    "featured": false,
+    "order": 11
+  },
+  {
+    "id": "lucia-dotta",
+    "name": "Lucia Dotta",
+    "role": "Nutricionista",
+    "featured": false,
+    "order": 12
+  },
+  {
+    "id": "christian-peluffo",
+    "name": "Christian Peluffo",
+    "role": "Kinesiólogo",
+    "featured": false,
+    "order": 13
+  },
+  {
+    "id": "carolina-daminano",
+    "name": "Carolina Daminano",
+    "role": "Asistente Médico",
+    "featured": false,
+    "order": 14
+  },
+  {
+    "id": "guzman-verdino",
+    "name": "Guzmán Verdino",
+    "role": "Contador",
+    "featured": false,
+    "order": 15
+  },
+  {
+    "id": "marcelo-del-puerto",
+    "name": "Marcelo del Puerto",
+    "role": "Gestión de Inversiones",
+    "featured": false,
+    "order": 16
+  },
+  {
+    "id": "nicolas-mora",
+    "name": "Nicolas Mora",
+    "role": "Scouting",
+    "featured": false,
+    "order": 17
+  },
+  {
+    "id": "luis-laca",
+    "name": "Luis Laca",
+    "role": "Scouting",
+    "featured": false,
+    "order": 18
+  },
+  {
+    "id": "gonzalo-ganicoche",
+    "name": "Gonzalo Ganicoche",
+    "role": "Scouting",
+    "featured": false,
+    "order": 19
+  },
+  {
+    "id": "antonio-latorre",
+    "name": "Antonio Latorre",
+    "role": "Scouting",
+    "featured": false,
+    "order": 20
+  },
+  {
+    "id": "mario-hernandez",
+    "name": "Mario Hernández",
+    "role": "Scouting",
+    "featured": false,
+    "order": 21
+  },
+  {
+    "id": "martin-de-felippe",
+    "name": "Martin De Felippe",
+    "role": "Scouting · Buenos Aires, Argentina",
+    "featured": false,
+    "order": 22
+  },
+  {
+    "id": "ivan-amaya",
+    "name": "Ivan Amaya",
+    "role": "Scouting",
+    "featured": false,
+    "order": 23
+  },
+  {
+    "id": "angelita-ferreira",
+    "name": "Angelita Ferreira",
+    "role": "Residencia de Jugadores",
+    "featured": false,
+    "order": 24
+  }
+]
