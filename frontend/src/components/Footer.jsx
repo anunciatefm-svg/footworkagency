@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-5">
-              <img src={LOGO_URL} alt="Footwork Agency" className="h-14 w-14 object-contain" />
+              <img src={LOGO_URL} alt="Footwork Agency" className="h-14 w-14 rounded-full object-cover bg-[#06121F] ring-1 ring-white/10" />
               <div className="flex flex-col leading-tight">
                 <span className="font-display font-bold text-white text-xl tracking-wider uppercase">Footwork</span>
                 <span className="font-display text-[10px] text-[#5BB6FF] tracking-[0.3em] uppercase">Agency</span>

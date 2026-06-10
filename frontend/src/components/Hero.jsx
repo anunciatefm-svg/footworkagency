@@ -42,7 +42,7 @@ export default function Hero() {
             <img
               src={LOGO_URL}
               alt="Footwork Agency"
-              className="h-24 w-24 sm:h-28 sm:w-28 object-contain drop-shadow-[0_0_30px_rgba(91,182,255,0.6)]"
+              className="h-24 w-24 sm:h-28 sm:w-28 rounded-full object-cover bg-[#06121F] ring-2 ring-[#5BB6FF]/30 drop-shadow-[0_0_30px_rgba(91,182,255,0.6)]"
               fetchPriority="high"
             />
             <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />

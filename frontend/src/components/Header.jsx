@@ -7,6 +7,7 @@ const NAV = [
   { label: "Agencia", id: "nosotros" },
   { label: "Servicios", id: "servicios" },
   { label: "Modelo 360°", id: "modelo" },
+  { label: "Videoanálisis", id: "videoanalisis" },
   { label: "Jugadores", id: "jugadores" },
   { label: "Equipo", id: "equipo" },
   { label: "Crecimiento", id: "crecimiento" },
@@ -43,7 +44,7 @@ export default function Header() {
           onClick={() => scrollTo("inicio")}
           className="flex items-center gap-3 group shrink-0"
         >
-          <img src={LOGO_URL} alt="Footwork Agency" className="h-12 w-12 object-contain" />
+          <img src={LOGO_URL} alt="Footwork Agency" className="h-12 w-12 rounded-full object-cover bg-[#06121F] ring-1 ring-white/10" />
           <div className="hidden md:flex flex-col leading-tight">
             <span className="font-display font-bold text-white text-lg tracking-wider uppercase">Footwork</span>
             <span className="font-display text-[10px] text-[#5BB6FF] tracking-[0.3em] uppercase">Agency</span>
