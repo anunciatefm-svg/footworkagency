@@ -51,7 +51,7 @@ export default function Header() {
           </div>
         </button>
 
-        <nav className="hidden xl:flex items-center gap-0.5">
+        <nav className="hidden 2xl:flex items-center gap-0.5">
           {NAV.map((n) => (
             <button
               key={n.id}
@@ -79,7 +79,7 @@ export default function Header() {
             href={LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition-colors"
+            className="hidden md:inline-flex items-center gap-2 bg-[#0066CC] hover:bg-[#0052A3] text-white text-xs font-bold uppercase tracking-widest px-4 py-3 transition-colors shrink-0"
           >
             <MessageCircle className="w-3.5 h-3.5" />
             WhatsApp
@@ -88,7 +88,7 @@ export default function Header() {
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setOpen(!open)}
-            className="xl:hidden p-2 text-white"
+            className="2xl:hidden p-2 text-white"
             aria-label="Menú"
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,7 +97,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div data-testid="mobile-menu" className="xl:hidden bg-[#06121F] border-t border-white/10 px-6 py-6 space-y-1">
+        <div data-testid="mobile-menu" className="2xl:hidden bg-[#06121F] border-t border-white/10 px-6 py-6 space-y-1">
           {NAV.map((n) => (
             <button
               key={n.id}
