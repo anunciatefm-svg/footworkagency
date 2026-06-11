@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { ExternalLink, Info, Shield, Trophy } from "lucide-react";
+import { Calendar, ExternalLink, Info, Shield, Trophy } from "lucide-react";
 import { fetchPlayers, fileUrl } from "../lib/api";
 import { LINKS, PLAYER_CATEGORIES } from "../lib/constants";
 
@@ -75,6 +75,15 @@ function PlayerCard({ p, index }) {
             </span>
             <span className="text-white font-medium">{p.club || "Información próximamente"}</span>
           </div>
+          {p.year && (
+            <div>
+              <span className="flex items-center gap-1.5 text-white/40 uppercase tracking-widest text-[10px] mb-1">
+                <Calendar className="w-3 h-3 text-[#5BB6FF]/70" />
+                Año
+              </span>
+              <span className="text-white/75 font-light leading-snug">{p.year}</span>
+            </div>
+          )}
           {p.competition && (
             <div>
               <span className="flex items-center gap-1.5 text-white/40 uppercase tracking-widest text-[10px] mb-1">
@@ -129,7 +138,7 @@ export default function Players() {
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       list = list.filter((p) =>
-        [p.name, p.club, p.position, p.competition]
+        [p.name, p.club, p.position, p.competition, p.year?.toString()]
           .filter(Boolean)
           .some((field) => field.toLowerCase().includes(q))
       );
@@ -163,7 +172,7 @@ export default function Players() {
             </h2>
           </div>
           <p className="text-white/60 text-base leading-relaxed max-w-md font-light">
-            Ordenados desde Primera División hacia Sub-15, con club, competencia y posición cuando está disponible en Transfermarkt.
+            Ordenados desde Primera División hacia Sub-15 e incorporando jugadores OFI, con club, competencia y posición cuando está disponible en Transfermarkt.
           </p>
         </div>
 
@@ -187,7 +196,7 @@ export default function Players() {
           <input
             data-testid="players-search-input"
             type="search"
-            placeholder="Buscar nombre, club o posición..."
+            placeholder="Buscar nombre, club, año o posición..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="bg-transparent border border-white/10 focus:border-[#5BB6FF] outline-none px-4 py-2.5 text-sm text-white placeholder:text-white/40 w-full md:w-64"

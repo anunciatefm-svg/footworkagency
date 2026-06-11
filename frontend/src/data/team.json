@@ -6,7 +6,7 @@
     "bio": "Lidera la planificación, gestión y desarrollo del área deportiva, trabajando en la construcción de oportunidades y el acompañamiento integral de futbolistas.",
     "linkedin_url": "https://uy.linkedin.com/in/emiliano-martinez-ab323820",
     "photo_url": null,
-    "featured": true,
+    "featured": false,
     "order": 1
   },
   {
@@ -38,8 +38,8 @@
     "order": 5
   },
   {
-    "id": "norber-gnocci",
-    "name": "Norber Gnocci",
+    "id": "norber-gnocchi",
+    "name": "Norber Gnocchi",
     "role": "Neurociencia · Coach Deportivo",
     "featured": false,
     "order": 6

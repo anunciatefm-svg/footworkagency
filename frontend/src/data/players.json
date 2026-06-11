@@ -312,18 +312,6 @@
     "competition": "Fútbol femenino"
   },
   {
-    "id": "juan-manuel-brito",
-    "name": "Juan Manuel Brito",
-    "category": "Sub-19",
-    "order": 217,
-    "position": null,
-    "club": "Deportivo Maldonado",
-    "photo_url": "/photos/juan-manuel-brito.jpg",
-    "transfermarkt_url": null,
-    "info_url": null,
-    "competition": "Torneo Apertura - Divisional A"
-  },
-  {
     "id": "enzo-espinel",
     "name": "Enzo Espinel",
     "category": "Sub-17",
@@ -468,6 +456,18 @@
     "competition": "Torneo Apertura - Divisional A"
   },
   {
+    "id": "juan-manuel-brito",
+    "name": "Juan Manuel Brito",
+    "category": "Sub-16",
+    "order": 506,
+    "position": null,
+    "club": "Deportivo Maldonado",
+    "photo_url": "/photos/juan-manuel-brito.jpg",
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "Torneo Apertura - Divisional A"
+  },
+  {
     "id": "ignacio-benero",
     "name": "Ignacio Benero",
     "category": "Sub-15",
@@ -490,5 +490,43 @@
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "Torneo Apertura - Divisional A"
+  },
+  {
+    "id": "leonel-araujo",
+    "name": "Leonel Araujo",
+    "category": "Jugadores OFI",
+    "order": 700,
+    "position": null,
+    "club": "Club Ceibal de Salto",
+    "photo_url": "/photos/leonel-araujo.jpg",
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "OFI",
+    "year": 2010
+  },
+  {
+    "id": "tiziano-ganicoche",
+    "name": "Tiziano Ganicoche",
+    "category": "Jugadores OFI",
+    "order": 701,
+    "position": null,
+    "club": "Club Ceibal de Salto",
+    "photo_url": "/photos/tiziano-ganicoche.jpg",
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "OFI",
+    "year": 2010
+  },
+  {
+    "id": "franco-bortoluzzi",
+    "name": "Franco Bortoluzzi",
+    "category": "Jugadores OFI",
+    "order": 702,
+    "position": null,
+    "club": "Club Atlético Higueritas",
+    "photo_url": "/photos/franco-bortoluzzi.jpg",
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "OFI"
   }
 ]

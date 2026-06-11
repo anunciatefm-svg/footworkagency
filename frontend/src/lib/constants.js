@@ -12,13 +12,14 @@ export const LINKS = {
   email: `mailto:${CONTACT_EMAIL}`,
 };
 
-// Official player roster — categories ordered from Primera División → Sub-15.
+// Official player roster — categories ordered from Primera División → Sub-15 + OFI.
 export const PLAYER_CATEGORIES = [
   "Primera División",
   "Sub-19",
   "Sub-17",
   "Sub-16",
   "Sub-15",
+  "Jugadores OFI",
 ];
 
 // Service blocks shown in section C
@@ -102,19 +103,22 @@ export const FALLBACK_PLAYERS = [
     "Julio Gadea","Emanuel Sainz","Thiago Rodriguez","Tomás Rodriguez","Santiago Prieto",
     "Lucas Ferreira","Felipe Sosa","Fabricio Resende","Matias Lescano","Dilan Ilarraz",
     "Facundo Almeida","Joaquin Parceriza","Santiago Borges","Kevin Hernandez","Lautaro Silva",
-    "Felipe Suhr","Agustina Alvez","Juan Manuel Brito",
+    "Felipe Suhr","Agustina Alvez",
   ], "Sub-19", 200),
   ...buildFallback([
     "Enzo Espinel","Felipe Ramirez","Augusto Suarez","Franco Lasalvia","Mateo Ramos",
   ], "Sub-17", 400),
   ...buildFallback([
-    "Lautaro Alberro","Faustino Piaggio","Gonzalo Fernandez","Valentin Fernandez","Tomas Brolio","Dhiyago Duran",
+    "Lautaro Alberro","Faustino Piaggio","Gonzalo Fernandez","Valentin Fernandez","Tomas Brolio","Dhiyago Duran","Juan Manuel Brito",
   ], "Sub-16", 500),
   ...buildFallback(["Ignacio Benero","Ramiro Mombrum"], "Sub-15", 600),
+  { id: "leonel-araujo", name: "Leonel Araujo", category: "Jugadores OFI", order: 700, position: null, club: "Club Ceibal de Salto", photo_url: "/photos/leonel-araujo.jpg", transfermarkt_url: null, info_url: null, competition: "OFI", year: 2010 },
+  { id: "tiziano-ganicoche", name: "Tiziano Ganicoche", category: "Jugadores OFI", order: 701, position: null, club: "Club Ceibal de Salto", photo_url: "/photos/tiziano-ganicoche.jpg", transfermarkt_url: null, info_url: null, competition: "OFI", year: 2010 },
+  { id: "franco-bortoluzzi", name: "Franco Bortoluzzi", category: "Jugadores OFI", order: 702, position: null, club: "Club Atlético Higueritas", photo_url: "/photos/franco-bortoluzzi.jpg", transfermarkt_url: null, info_url: null, competition: "OFI" },
 ];
 
 export const FALLBACK_TEAM = [
-  { id: "emiliano", name: "Emiliano Martínez", role: "Director Ejecutivo", bio: "Lidera la planificación, gestión y desarrollo del área deportiva, trabajando en la construcción de oportunidades y el acompañamiento integral de futbolistas.", linkedin_url: "https://uy.linkedin.com/in/emiliano-martinez-ab323820", featured: true, order: 1 },
+  { id: "emiliano", name: "Emiliano Martínez", role: "Director Ejecutivo", bio: "Lidera la planificación, gestión y desarrollo del área deportiva, trabajando en la construcción de oportunidades y el acompañamiento integral de futbolistas.", linkedin_url: "https://uy.linkedin.com/in/emiliano-martinez-ab323820", featured: false, order: 1 },
   { id: "mauro", name: "Mauro Alonso", role: "Subdirector General · Agente FIFA Argentina · Dirección Operativa", featured: false, order: 2 },
   { id: "fernando", name: "Fernando Flori", role: "Agente FIFA · Socio Estratégico Argentina", featured: false, order: 3 },
 ];
