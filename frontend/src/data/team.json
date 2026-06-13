@@ -32,7 +32,7 @@
   },
   {
     "id": "lara-fierro",
-    "name": "Lara Fierro",
+    "name": "Dra. Lara Fierro",
     "role": "Directora Clínica Aurum",
     "featured": false,
     "order": 5
@@ -52,122 +52,115 @@
     "order": 7
   },
   {
-    "id": "sandra-sicilia",
-    "name": "Sandra Sicilia",
-    "role": "Abogada",
-    "featured": false,
-    "order": 8
-  },
-  {
     "id": "federico-borreiro",
     "name": "Federico Borreiro",
     "role": "Intermediario",
     "featured": false,
-    "order": 9
+    "order": 8
   },
   {
     "id": "facundo-alvarez",
     "name": "Facundo Álvarez",
     "role": "Comunicación · Community Manager",
     "featured": false,
-    "order": 10
+    "order": 9
   },
   {
     "id": "facundo-fierro",
     "name": "Facundo Fierro",
     "role": "Diseño Gráfico",
     "featured": false,
-    "order": 11
+    "order": 10
   },
   {
     "id": "lucia-dotta",
     "name": "Lucia Dotta",
     "role": "Nutricionista",
     "featured": false,
-    "order": 12
+    "order": 11
   },
   {
     "id": "christian-peluffo",
     "name": "Christian Peluffo",
     "role": "Kinesiólogo",
     "featured": false,
-    "order": 13
+    "order": 12
   },
   {
     "id": "carolina-daminano",
     "name": "Carolina Daminano",
     "role": "Asistente Médico",
     "featured": false,
-    "order": 14
+    "order": 13
   },
   {
     "id": "guzman-verdino",
     "name": "Guzmán Verdino",
     "role": "Contador",
     "featured": false,
-    "order": 15
+    "order": 14
   },
   {
     "id": "marcelo-del-puerto",
     "name": "Marcelo del Puerto",
     "role": "Gestión de Inversiones",
     "featured": false,
-    "order": 16
+    "order": 15
   },
   {
     "id": "nicolas-mora",
     "name": "Nicolas Mora",
     "role": "Scouting",
     "featured": false,
-    "order": 17
+    "order": 16
   },
   {
     "id": "luis-laca",
     "name": "Luis Laca",
     "role": "Scouting",
     "featured": false,
-    "order": 18
+    "order": 17
   },
   {
     "id": "gonzalo-ganicoche",
     "name": "Gonzalo Ganicoche",
     "role": "Scouting",
     "featured": false,
-    "order": 19
+    "order": 18
   },
   {
     "id": "antonio-latorre",
     "name": "Antonio Latorre",
     "role": "Scouting",
     "featured": false,
-    "order": 20
+    "order": 19
   },
   {
     "id": "mario-hernandez",
     "name": "Mario Hernández",
     "role": "Scouting",
     "featured": false,
-    "order": 21
+    "order": 20
   },
   {
     "id": "martin-de-felippe",
     "name": "Martin De Felippe",
     "role": "Scouting · Buenos Aires, Argentina",
     "featured": false,
-    "order": 22
+    "order": 21
   },
   {
     "id": "ivan-amaya",
     "name": "Ivan Amaya",
     "role": "Scouting",
     "featured": false,
-    "order": 23
+    "order": 22
   },
   {
     "id": "angelita-ferreira",
     "name": "Angelita Ferreira",
     "role": "Residencia de Jugadores",
     "featured": false,
-    "order": 24
+    "order": 23
   }
 ]
