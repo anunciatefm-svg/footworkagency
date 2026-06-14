@@ -534,12 +534,25 @@
     "name": "Facundo Moreira",
     "category": "Jugadores OFI",
     "order": 703,
-    "position": null,
+    "position": "Defensa central",
     "club": "Club Atlético Fernandino",
     "photo_url": "/photos/facundo-moreira.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "OFI",
     "year": 2009
+  },
+  {
+    "id": "facundo-martinez",
+    "name": "Facundo Martinez",
+    "category": "Jugadores OFI",
+    "order": 704,
+    "position": "Lateral izquierdo",
+    "club": "Porvenir de Melo",
+    "photo_url": "/photos/facundo-martinez.jpg",
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "OFI",
+    "year": 2008
   }
 ]
