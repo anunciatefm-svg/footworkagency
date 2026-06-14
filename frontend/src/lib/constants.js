@@ -115,6 +115,7 @@ export const FALLBACK_PLAYERS = [
   { id: "leonel-araujo", name: "Leonel Araujo", category: "Jugadores OFI", order: 700, position: null, club: "Club Ceibal de Salto", photo_url: "/photos/leonel-araujo.jpg", transfermarkt_url: null, info_url: null, competition: "OFI", year: 2010 },
   { id: "tiziano-ganicoche", name: "Tiziano Ganicoche", category: "Jugadores OFI", order: 701, position: null, club: "Club Ceibal de Salto", photo_url: "/photos/tiziano-ganicoche.jpg", transfermarkt_url: null, info_url: null, competition: "OFI", year: 2010 },
   { id: "franco-bortoluzzi", name: "Franco Bortoluzzi", category: "Jugadores OFI", order: 702, position: null, club: "Club Atlético Higueritas", photo_url: "/photos/franco-bortoluzzi.jpg", transfermarkt_url: null, info_url: null, competition: "OFI" },
+  { id: "facundo-moreira", name: "Facundo Moreira", category: "Jugadores OFI", order: 703, position: null, club: "Club Atlético Fernandino", photo_url: "/photos/facundo-moreira.jpg", transfermarkt_url: null, info_url: null, competition: "OFI", year: 2009 },
 ];
 
 export const FALLBACK_TEAM = [
