@@ -88,9 +88,19 @@ export default function Footer() {
           <p className="text-xs text-white/40 uppercase tracking-widest">
             © {new Date().getFullYear()} Footwork Agency. Todos los derechos reservados.
           </p>
-          <p className="text-[10px] text-white/30 uppercase tracking-widest">
-            Potenciamos el talento, construimos futuro.
-          </p>
+          <div className="flex flex-col sm:items-end gap-1">
+            <p className="text-[10px] text-white/30 uppercase tracking-widest">
+              Potenciamos el talento, construimos futuro.
+            </p>
+            <a
+              href="https://www.instagram.com/anunciate_fm?igsh=MTVvMHh2ZjBxMWVh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-white/20 hover:text-[#5BB6FF]/70 transition-colors tracking-wider"
+            >
+              Página desarrollada por Anunciate FM
+            </a>
+          </div>
         </div>
       </div>
     </footer>
