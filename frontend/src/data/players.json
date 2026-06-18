@@ -9,7 +9,43 @@
     "photo_url": "/photos/alvaro-san-emeterio.jpg",
     "transfermarkt_url": "https://www.transfermarkt.es/alvaro-san-emeterio/profil/spieler/1178893",
     "info_url": null,
-    "competition": "Segunda División"
+    "competition": "Segunda División",
+    "year": 1997,
+    "height": "1,84 mts",
+    "age": "28 años",
+    "strong_foot": "Derecha",
+    "nationality": "Argentino",
+    "current_club": "Tacuarembó FC (Uruguay)",
+    "agent": "Footwork Agency",
+    "profile": "Defensor central argentino formado en las inferiores de Talleres de Córdoba, con recorrido por Tacuarembó FC, Cerrito y Club Universitario de Córdoba. Su perfil combina solidez aérea, agresividad en el duelo y lectura de juego para anticipar situaciones de riesgo. En posesión aporta criterio en la distribución larga y presencia activa cuando el juego lo requiere.",
+    "stats_highlights": [
+      "6° en duelos aéreos ganados [35] en Segunda División Uruguaya 2026",
+      "18° en despejes de balón [30] en Segunda División Uruguaya 2026",
+      "Referente defensivo de Tacuarembó FC en el tramo analizado"
+    ],
+    "career_history": [
+      "Talleres (inferiores) · Argentina",
+      "Instituto (inferiores) · Argentina",
+      "Tacuarembó FC · Uruguay",
+      "Cerrito · Uruguay",
+      "Club Universitario de Córdoba · Argentina",
+      "Tacuarembó FC · Uruguay · Club actual"
+    ],
+    "gallery": [
+      "/photos/alvaro-san-emeterio.jpg"
+    ],
+    "videos": [
+      {
+        "title": "Video de seguimiento / highlights",
+        "url": "https://www.youtube.com/watch?v=Pkmsxk7THCY"
+      }
+    ],
+    "reports": [
+      {
+        "title": "Informe CelesteStats x Footwork Agency",
+        "url": "/reports/alvaro-san-emeterio-informe-celestestats-footworkagency.pdf"
+      }
+    ]
   },
   {
     "id": "maximiliano-camargo",
@@ -496,7 +532,7 @@
     "name": "Leonel Araujo",
     "category": "Jugadores OFI",
     "order": 700,
-    "position": null,
+    "position": "Extremo / enganche",
     "club": "Club Ceibal de Salto",
     "photo_url": "/photos/leonel-araujo.jpg",
     "transfermarkt_url": null,
@@ -509,7 +545,7 @@
     "name": "Tiziano Ganicoche",
     "category": "Jugadores OFI",
     "order": 701,
-    "position": null,
+    "position": "Volante central",
     "club": "Club Ceibal de Salto",
     "photo_url": "/photos/tiziano-ganicoche.jpg",
     "transfermarkt_url": null,
@@ -522,7 +558,7 @@
     "name": "Franco Bortoluzzi",
     "category": "Jugadores OFI",
     "order": 702,
-    "position": null,
+    "position": "Delantero centro",
     "club": "Club Atlético Higueritas",
     "photo_url": "/photos/franco-bortoluzzi.jpg",
     "transfermarkt_url": null,
