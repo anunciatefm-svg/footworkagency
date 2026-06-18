@@ -269,13 +269,14 @@ function PlayerModal({ player, onClose }) {
                 </h5>
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                   {gallery.map((photo) => (
-                    <img
-                      key={photo}
-                      src={fileUrl(photo)}
-                      alt={`${player.name} galería`}
-                      className="aspect-square w-full object-cover object-top border border-white/10"
-                      loading="lazy"
-                    />
+                    <a key={photo} href={fileUrl(photo)} target="_blank" rel="noopener noreferrer" title="Abrir foto">
+                      <img
+                        src={fileUrl(photo)}
+                        alt={`${player.name} galería`}
+                        className="aspect-square w-full object-cover object-top border border-white/10 hover:border-[#5BB6FF]/60 transition-colors"
+                        loading="lazy"
+                      />
+                    </a>
                   ))}
                 </div>
               </section>
