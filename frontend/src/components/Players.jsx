@@ -69,6 +69,9 @@ function DetailItem({ icon: Icon, label, value }) {
 }
 
 function PlayerCard({ p, index, onSelect }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const imagePosition = p.photo_position || "center top";
+
   return (
     <article
       data-testid={`player-card-${index}`}
@@ -84,13 +87,15 @@ function PlayerCard({ p, index, onSelect }) {
       className="group relative bg-[#0B1B2E] border border-white/5 hover:border-[#5BB6FF]/40 transition-all duration-500 flex flex-col cursor-pointer focus:outline-none focus:border-[#5BB6FF] focus:ring-2 focus:ring-[#5BB6FF]/20"
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#102844] to-[#06121F]">
-        {p.photo_url ? (
+        {p.photo_url && !imageFailed ? (
           <img
             src={fileUrl(p.photo_url)}
             alt={p.name}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700"
+            onError={() => setImageFailed(true)}
+            style={{ objectPosition: imagePosition }}
+            className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
           />
         ) : (
           <div
@@ -151,6 +156,12 @@ function PlayerCard({ p, index, onSelect }) {
 }
 
 function PlayerModal({ player, onClose }) {
+  const [heroImageFailed, setHeroImageFailed] = useState(false);
+
+  useEffect(() => {
+    setHeroImageFailed(false);
+  }, [player?.id]);
+
   useEffect(() => {
     if (!player) return;
     const previous = document.body.style.overflow;
@@ -164,6 +175,7 @@ function PlayerModal({ player, onClose }) {
 
   const detailUrl = player.transfermarkt_url || player.info_url || null;
   const gallery = player.gallery?.length ? player.gallery : player.photo_url ? [player.photo_url] : [];
+  const heroImagePosition = player.photo_position || "center top";
 
   return (
     <div
@@ -186,11 +198,13 @@ function PlayerModal({ player, onClose }) {
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative min-h-[360px] bg-[#06121F]">
-            {player.photo_url ? (
+            {player.photo_url && !heroImageFailed ? (
               <img
                 src={fileUrl(player.photo_url)}
                 alt={player.name}
-                className="w-full h-full max-h-[720px] object-cover object-top"
+                onError={() => setHeroImageFailed(true)}
+                style={{ objectPosition: heroImagePosition }}
+                className="w-full h-full max-h-[720px] object-cover"
               />
             ) : (
               <div
@@ -273,6 +287,9 @@ function PlayerModal({ player, onClose }) {
                       <img
                         src={fileUrl(photo)}
                         alt={`${player.name} galería`}
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
                         className="aspect-square w-full object-cover object-top border border-white/10 hover:border-[#5BB6FF]/60 transition-colors"
                         loading="lazy"
                       />
