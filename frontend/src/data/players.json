@@ -153,7 +153,7 @@
     "order": 104,
     "position": "Delantero centro",
     "club": "Salto",
-    "photo_url": "/photos/gallery/gustavo-bortoli/01.jpg",
+    "photo_url": "/photos/gallery/gustavo-bortoli/02.jpg",
     "transfermarkt_url": "https://www.transfermarkt.es/gustavo-bortoli/profil/spieler/1065193",
     "info_url": null,
     "competition": "Primera Divisional C",
@@ -161,8 +161,8 @@
     "nationality": "Uruguayo",
     "current_club": "Salto F.C.",
     "gallery": [
-      "/photos/gallery/gustavo-bortoli/01.jpg",
       "/photos/gallery/gustavo-bortoli/02.jpg",
+      "/photos/gallery/gustavo-bortoli/01.jpg",
       "/photos/gallery/gustavo-bortoli/03.jpg",
       "/photos/gallery/gustavo-bortoli/04.jpg",
       "/photos/gallery/gustavo-bortoli/05.jpg",
@@ -178,7 +178,8 @@
     "career_history": [
       "Salto F.C. · Club actual",
       "Primera Divisional C · Competencia"
-    ]
+    ],
+    "photo_position": "center center"
   },
   {
     "id": "brian-sanchez",
