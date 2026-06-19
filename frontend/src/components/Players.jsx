@@ -36,6 +36,34 @@ const initialColor = (name) => {
   return palette[h % palette.length];
 };
 
+
+const getPrimaryPhoto = (p) => {
+  // Prioridad: usar siempre la galería subida a /public/photos/gallery.
+  // Esto evita depender de /photos/covers y mantiene una sola fuente de fotos.
+  if (Array.isArray(p.gallery) && p.gallery.length) return p.gallery[0];
+  return p.photo_url || null;
+};
+
+function GalleryImage({ src, alt, onClick }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) return null;
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="relative aspect-[4/3] overflow-hidden border border-white/10 bg-[#06121F] hover:border-[#5BB6FF]/60 transition-colors"
+    >
+      <img
+        src={fileUrl(src)}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      />
+    </button>
+  );
+}
 const hasPlayerDetails = (p) =>
   Boolean(
     p.profile ||
@@ -71,6 +99,7 @@ function DetailItem({ icon: Icon, label, value }) {
 function PlayerCard({ p, index, onSelect }) {
   const [imageFailed, setImageFailed] = useState(false);
   const imagePosition = p.photo_position || "center top";
+  const primaryPhoto = getPrimaryPhoto(p);
 
   return (
     <article
@@ -87,9 +116,9 @@ function PlayerCard({ p, index, onSelect }) {
       className="group relative bg-[#0B1B2E] border border-white/5 hover:border-[#5BB6FF]/40 transition-all duration-500 flex flex-col cursor-pointer focus:outline-none focus:border-[#5BB6FF] focus:ring-2 focus:ring-[#5BB6FF]/20"
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#102844] to-[#06121F]">
-        {p.photo_url && !imageFailed ? (
+        {primaryPhoto && !imageFailed ? (
           <img
-            src={fileUrl(p.photo_url)}
+            src={fileUrl(primaryPhoto)}
             alt={p.name}
             loading="lazy"
             decoding="async"
@@ -174,7 +203,9 @@ function PlayerModal({ player, onClose }) {
   if (!player) return null;
 
   const detailUrl = player.transfermarkt_url || player.info_url || null;
-  const gallery = player.gallery?.length ? player.gallery : player.photo_url ? [player.photo_url] : [];
+  const primaryPhoto = getPrimaryPhoto(player);
+  const rawGallery = player.gallery?.length ? player.gallery : primaryPhoto ? [primaryPhoto] : [];
+  const gallery = Array.from(new Set(rawGallery.filter(Boolean)));
   const heroImagePosition = player.photo_position || "center top";
 
   return (
@@ -198,9 +229,9 @@ function PlayerModal({ player, onClose }) {
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative min-h-[360px] bg-[#06121F]">
-            {player.photo_url && !heroImageFailed ? (
+            {primaryPhoto && !heroImageFailed ? (
               <img
-                src={fileUrl(player.photo_url)}
+                src={fileUrl(primaryPhoto)}
                 alt={player.name}
                 onError={() => setHeroImageFailed(true)}
                 style={{ objectPosition: heroImagePosition }}
