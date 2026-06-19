@@ -18,7 +18,10 @@ import {
 import { fetchPlayers, fileUrl } from "../lib/api";
 import { LINKS, PLAYER_CATEGORIES } from "../lib/constants";
 
-const FILTERS = [{ label: "Todos", value: "all" }, ...PLAYER_CATEGORIES.map((c) => ({ label: c, value: c }))];
+const FILTERS = [
+  { label: "Todos", value: "all" },
+  ...PLAYER_CATEGORIES.map((c) => ({ label: c, value: c })),
+];
 
 const initials = (name) =>
   name
@@ -36,13 +39,78 @@ const initialColor = (name) => {
   return palette[h % palette.length];
 };
 
-
-const getPrimaryPhoto = (p) => {
-  // Prioridad: usar siempre la galería subida a /public/photos/gallery.
-  // Esto evita depender de /photos/covers y mantiene una sola fuente de fotos.
-  if (Array.isArray(p.gallery) && p.gallery.length) return p.gallery[0];
-  return p.photo_url || null;
+const addUniquePhoto = (list, value) => {
+  if (!value || typeof value !== "string") return;
+  const clean = value.trim();
+  if (!clean) return;
+  if (!list.includes(clean)) list.push(clean);
 };
+
+const photoCandidates = (p) => {
+  const list = [];
+
+  // 1) Prioridad real: fotos ya cargadas en /public/photos/gallery.
+  if (Array.isArray(p.gallery)) {
+    p.gallery.forEach((photo) => addUniquePhoto(list, photo));
+  }
+
+  // 2) Aunque players.json no traiga gallery actualizado en Vercel,
+  // probamos automáticamente la carpeta por id del jugador.
+  if (p.id) {
+    for (let i = 1; i <= 30; i += 1) {
+      addUniquePhoto(
+        list,
+        `/photos/gallery/${p.id}/${String(i).padStart(2, "0")}.jpg`,
+      );
+      addUniquePhoto(list, `/photos/gallery/${p.id}/${i}.jpg`);
+    }
+  }
+
+  // 3) Fallback viejo que ya existe en /public/photos.
+  addUniquePhoto(list, p.photo_url);
+  if (p.id) {
+    addUniquePhoto(list, `/photos/${p.id}.jpg`);
+    addUniquePhoto(list, `/photos/${p.id}.png`);
+    addUniquePhoto(list, `/photos/${p.id}.jpeg`);
+  }
+
+  return list;
+};
+
+function PlayerImage({
+  player,
+  alt,
+  className,
+  style,
+  loading = "lazy",
+  fallback,
+}) {
+  const candidates = useMemo(() => photoCandidates(player), [player]);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    setImageIndex(0);
+  }, [player?.id]);
+
+  const src = candidates[imageIndex];
+
+  if (!src) return fallback || null;
+
+  return (
+    <img
+      key={src}
+      src={fileUrl(src)}
+      alt={alt || player.name}
+      loading={loading}
+      decoding="async"
+      onError={() => setImageIndex((current) => current + 1)}
+      style={style}
+      className={className}
+    />
+  );
+}
+
+const getPrimaryPhoto = (p) => photoCandidates(p)[0] || null;
 
 function GalleryImage({ src, alt, onClick }) {
   const [failed, setFailed] = useState(false);
@@ -67,20 +135,20 @@ function GalleryImage({ src, alt, onClick }) {
 const hasPlayerDetails = (p) =>
   Boolean(
     p.profile ||
-      p.height ||
-      p.age ||
-      p.strong_foot ||
-      p.nationality ||
-      p.current_club ||
-      p.agent ||
-      p.year ||
-      p.videos?.length ||
-      p.reports?.length ||
-      p.gallery?.length ||
-      p.stats_highlights?.length ||
-      p.career_history?.length ||
-      p.transfermarkt_url ||
-      p.info_url
+    p.height ||
+    p.age ||
+    p.strong_foot ||
+    p.nationality ||
+    p.current_club ||
+    p.agent ||
+    p.year ||
+    p.videos?.length ||
+    p.reports?.length ||
+    p.gallery?.length ||
+    p.stats_highlights?.length ||
+    p.career_history?.length ||
+    p.transfermarkt_url ||
+    p.info_url,
   );
 
 function DetailItem({ icon: Icon, label, value }) {
@@ -91,15 +159,15 @@ function DetailItem({ icon: Icon, label, value }) {
         <Icon className="w-3 h-3 text-[#5BB6FF]" />
         {label}
       </span>
-      <span className="block text-sm text-white font-medium leading-snug">{value}</span>
+      <span className="block text-sm text-white font-medium leading-snug">
+        {value}
+      </span>
     </div>
   );
 }
 
 function PlayerCard({ p, index, onSelect }) {
-  const [imageFailed, setImageFailed] = useState(false);
   const imagePosition = p.photo_position || "center top";
-  const primaryPhoto = getPrimaryPhoto(p);
 
   return (
     <article
@@ -116,26 +184,24 @@ function PlayerCard({ p, index, onSelect }) {
       className="group relative bg-[#0B1B2E] border border-white/5 hover:border-[#5BB6FF]/40 transition-all duration-500 flex flex-col cursor-pointer focus:outline-none focus:border-[#5BB6FF] focus:ring-2 focus:ring-[#5BB6FF]/20"
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-[#102844] to-[#06121F]">
-        {primaryPhoto && !imageFailed ? (
-          <img
-            src={fileUrl(primaryPhoto)}
-            alt={p.name}
-            loading="lazy"
-            decoding="async"
-            onError={() => setImageFailed(true)}
-            style={{ objectPosition: imagePosition }}
-            className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-          />
-        ) : (
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{ background: `radial-gradient(circle at center, ${initialColor(p.name)}30, transparent 70%)` }}
-          >
-            <span className="font-display text-6xl text-white/25 group-hover:text-white/45 transition-colors duration-500">
-              {initials(p.name)}
-            </span>
-          </div>
-        )}
+        <PlayerImage
+          player={p}
+          alt={p.name}
+          style={{ objectPosition: imagePosition }}
+          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+          fallback={
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                background: `radial-gradient(circle at center, ${initialColor(p.name)}30, transparent 70%)`,
+              }}
+            >
+              <span className="font-display text-6xl text-white/25 group-hover:text-white/45 transition-colors duration-500">
+                {initials(p.name)}
+              </span>
+            </div>
+          }
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06121F] via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
           <span className="bg-[#0066CC] text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1">
@@ -161,7 +227,9 @@ function PlayerCard({ p, index, onSelect }) {
               <Shield className="w-3 h-3 text-[#5BB6FF]/70" />
               Club
             </span>
-            <span className="text-white font-medium">{p.club || "Información próximamente"}</span>
+            <span className="text-white font-medium">
+              {p.club || "Información próximamente"}
+            </span>
           </div>
           {p.competition && (
             <div>
@@ -169,7 +237,9 @@ function PlayerCard({ p, index, onSelect }) {
                 <Trophy className="w-3 h-3 text-[#5BB6FF]/70" />
                 Competencia
               </span>
-              <span className="text-white/75 font-light leading-snug">{p.competition}</span>
+              <span className="text-white/75 font-light leading-snug">
+                {p.competition}
+              </span>
             </div>
           )}
         </div>
@@ -185,12 +255,6 @@ function PlayerCard({ p, index, onSelect }) {
 }
 
 function PlayerModal({ player, onClose }) {
-  const [heroImageFailed, setHeroImageFailed] = useState(false);
-
-  useEffect(() => {
-    setHeroImageFailed(false);
-  }, [player?.id]);
-
   useEffect(() => {
     if (!player) return;
     const previous = document.body.style.overflow;
@@ -204,7 +268,9 @@ function PlayerModal({ player, onClose }) {
 
   const detailUrl = player.transfermarkt_url || player.info_url || null;
   const primaryPhoto = getPrimaryPhoto(player);
-  const rawGallery = player.gallery?.length ? player.gallery : primaryPhoto ? [primaryPhoto] : [];
+  const rawGallery = player.gallery?.length
+    ? player.gallery
+    : photoCandidates(player);
   const gallery = Array.from(new Set(rawGallery.filter(Boolean)));
   const heroImagePosition = player.photo_position || "center top";
 
@@ -229,22 +295,25 @@ function PlayerModal({ player, onClose }) {
 
         <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
           <div className="relative min-h-[360px] bg-[#06121F]">
-            {primaryPhoto && !heroImageFailed ? (
-              <img
-                src={fileUrl(primaryPhoto)}
-                alt={player.name}
-                onError={() => setHeroImageFailed(true)}
-                style={{ objectPosition: heroImagePosition }}
-                className="w-full h-full max-h-[720px] object-cover"
-              />
-            ) : (
-              <div
-                className="min-h-[420px] flex items-center justify-center"
-                style={{ background: `radial-gradient(circle at center, ${initialColor(player.name)}40, transparent 70%)` }}
-              >
-                <span className="font-display text-7xl text-white/25">{initials(player.name)}</span>
-              </div>
-            )}
+            <PlayerImage
+              player={player}
+              alt={player.name}
+              loading="eager"
+              style={{ objectPosition: heroImagePosition }}
+              className="w-full h-full max-h-[720px] object-cover"
+              fallback={
+                <div
+                  className="min-h-[420px] flex items-center justify-center"
+                  style={{
+                    background: `radial-gradient(circle at center, ${initialColor(player.name)}40, transparent 70%)`,
+                  }}
+                >
+                  <span className="font-display text-7xl text-white/25">
+                    {initials(player.name)}
+                  </span>
+                </div>
+              }
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#071625] via-transparent to-transparent" />
             <div className="absolute left-5 bottom-5 right-5">
               <span className="inline-block bg-[#0066CC] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-3">
@@ -254,51 +323,99 @@ function PlayerModal({ player, onClose }) {
                 {player.name}
               </h3>
               {player.position && (
-                <p className="text-[#5BB6FF] uppercase tracking-[0.25em] text-xs mt-3 font-medium">{player.position}</p>
+                <p className="text-[#5BB6FF] uppercase tracking-[0.25em] text-xs mt-3 font-medium">
+                  {player.position}
+                </p>
               )}
             </div>
           </div>
 
           <div className="p-6 sm:p-8 lg:p-10 space-y-8">
             <div>
-              <span className="text-xs uppercase tracking-[0.4em] text-[#5BB6FF] font-medium">Ficha del jugador</span>
-              <h4 className="font-display text-2xl sm:text-3xl uppercase text-white font-bold mt-2">Información ampliada</h4>
+              <span className="text-xs uppercase tracking-[0.4em] text-[#5BB6FF] font-medium">
+                Ficha del jugador
+              </span>
+              <h4 className="font-display text-2xl sm:text-3xl uppercase text-white font-bold mt-2">
+                Información ampliada
+              </h4>
               <p className="text-white/55 text-sm mt-3 max-w-2xl">
-                Datos principales, material de análisis, enlaces útiles y recursos para seguimiento deportivo.
+                Datos principales, material de análisis, enlaces útiles y
+                recursos para seguimiento deportivo.
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
-              <DetailItem icon={Building2} label="Club" value={player.current_club || player.club} />
-              <DetailItem icon={Trophy} label="Competencia" value={player.competition} />
-              <DetailItem icon={User} label="Categoría / generación" value={player.year ? `${player.category} · ${player.year}` : player.category} />
-              <DetailItem icon={Shield} label="Posición" value={player.position} />
+              <DetailItem
+                icon={Building2}
+                label="Club"
+                value={player.current_club || player.club}
+              />
+              <DetailItem
+                icon={Trophy}
+                label="Competencia"
+                value={player.competition}
+              />
+              <DetailItem
+                icon={User}
+                label="Categoría / generación"
+                value={
+                  player.year
+                    ? `${player.category} · ${player.year}`
+                    : player.category
+                }
+              />
+              <DetailItem
+                icon={Shield}
+                label="Posición"
+                value={player.position}
+              />
               <DetailItem icon={Ruler} label="Altura" value={player.height} />
               <DetailItem icon={Calendar} label="Edad" value={player.age} />
-              <DetailItem icon={Info} label="Pierna hábil" value={player.strong_foot} />
-              <DetailItem icon={Flag} label="Nacionalidad" value={player.nationality} />
+              <DetailItem
+                icon={Info}
+                label="Pierna hábil"
+                value={player.strong_foot}
+              />
+              <DetailItem
+                icon={Flag}
+                label="Nacionalidad"
+                value={player.nationality}
+              />
             </div>
 
             {player.profile ? (
               <section>
-                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">Perfil del jugador</h5>
-                <p className="text-white/70 leading-relaxed text-sm sm:text-base font-light">{player.profile}</p>
+                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">
+                  Perfil del jugador
+                </h5>
+                <p className="text-white/70 leading-relaxed text-sm sm:text-base font-light">
+                  {player.profile}
+                </p>
               </section>
             ) : (
               <section className="border border-white/10 p-4 bg-white/[0.02]">
-                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-2">Perfil del jugador</h5>
+                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-2">
+                  Perfil del jugador
+                </h5>
                 <p className="text-white/55 text-sm font-light">
-                  Información ampliada próximamente. Esta ficha ya queda preparada para cargar descripción, videos, informes, audio y más fotos.
+                  Información ampliada próximamente. Esta ficha ya queda
+                  preparada para cargar descripción, videos, informes, audio y
+                  más fotos.
                 </p>
               </section>
             )}
 
             {player.stats_highlights?.length > 0 && (
               <section>
-                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">Datos destacados</h5>
+                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">
+                  Datos destacados
+                </h5>
                 <div className="grid sm:grid-cols-3 gap-3">
                   {player.stats_highlights.map((item) => (
-                    <div key={item} className="border border-[#5BB6FF]/20 bg-[#0066CC]/10 p-4 text-white/75 text-sm leading-snug">
+                    <div
+                      key={item}
+                      className="border border-[#5BB6FF]/20 bg-[#0066CC]/10 p-4 text-white/75 text-sm leading-snug"
+                    >
                       {item}
                     </div>
                   ))}
@@ -314,7 +431,13 @@ function PlayerModal({ player, onClose }) {
                 </h5>
                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
                   {gallery.map((photo) => (
-                    <a key={photo} href={fileUrl(photo)} target="_blank" rel="noopener noreferrer" title="Abrir foto">
+                    <a
+                      key={photo}
+                      href={fileUrl(photo)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Abrir foto"
+                    >
                       <img
                         src={fileUrl(photo)}
                         alt={`${player.name} galería`}
@@ -332,10 +455,15 @@ function PlayerModal({ player, onClose }) {
 
             {player.career_history?.length > 0 && (
               <section>
-                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">Trayectoria</h5>
+                <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">
+                  Trayectoria
+                </h5>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {player.career_history.map((item) => (
-                    <div key={item} className="text-white/65 text-sm border border-white/10 bg-white/[0.02] px-3 py-2">
+                    <div
+                      key={item}
+                      className="text-white/65 text-sm border border-white/10 bg-white/[0.02] px-3 py-2"
+                    >
                       {item}
                     </div>
                   ))}
@@ -344,7 +472,9 @@ function PlayerModal({ player, onClose }) {
             )}
 
             <section>
-              <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">Material disponible</h5>
+              <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-3">
+                Material disponible
+              </h5>
               <div className="flex flex-wrap gap-3">
                 {player.videos?.map((video) => (
                   <a
@@ -381,17 +511,21 @@ function PlayerModal({ player, onClose }) {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 border border-white/15 hover:border-[#5BB6FF] text-white px-4 py-3 text-xs font-bold uppercase tracking-widest transition-colors"
                   >
-                    {player.transfermarkt_url ? "Transfermarkt" : "Enlace externo"}
+                    {player.transfermarkt_url
+                      ? "Transfermarkt"
+                      : "Enlace externo"}
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 )}
 
-                {!player.videos?.length && !player.reports?.length && !detailUrl && (
-                  <span className="inline-flex items-center gap-2 text-white/45 border border-white/10 px-4 py-3 text-xs uppercase tracking-widest">
-                    <Info className="w-4 h-4" />
-                    Material próximamente
-                  </span>
-                )}
+                {!player.videos?.length &&
+                  !player.reports?.length &&
+                  !detailUrl && (
+                    <span className="inline-flex items-center gap-2 text-white/45 border border-white/10 px-4 py-3 text-xs uppercase tracking-widest">
+                      <Info className="w-4 h-4" />
+                      Material próximamente
+                    </span>
+                  )}
               </div>
             </section>
           </div>
@@ -422,9 +556,16 @@ export default function Players() {
     if (search.trim()) {
       const q = search.trim().toLowerCase();
       list = list.filter((p) =>
-        [p.name, p.club, p.position, p.competition, p.nationality, p.current_club]
+        [
+          p.name,
+          p.club,
+          p.position,
+          p.competition,
+          p.nationality,
+          p.current_club,
+        ]
           .filter(Boolean)
-          .some((field) => field.toLowerCase().includes(q))
+          .some((field) => field.toLowerCase().includes(q)),
       );
     }
     return list;
@@ -445,22 +586,32 @@ export default function Players() {
   }, [filtered]);
 
   return (
-    <section id="jugadores" data-testid="players-section" className="relative py-24 md:py-32 bg-[#06121F] border-t border-white/5">
+    <section
+      id="jugadores"
+      data-testid="players-section"
+      className="relative py-24 md:py-32 bg-[#06121F] border-t border-white/5"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
           <div>
-            <span className="text-xs uppercase tracking-[0.4em] text-[#5BB6FF] font-medium">— Roster</span>
+            <span className="text-xs uppercase tracking-[0.4em] text-[#5BB6FF] font-medium">
+              — Roster
+            </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight leading-[0.95] font-bold text-white mt-4">
               Jugadores <br />
               <span className="text-white/30">Representados</span>
             </h2>
           </div>
           <p className="text-white/60 text-base leading-relaxed max-w-md font-light">
-            Ordenados desde Primera División hacia Sub-15 y OFI, con club, competencia, posición y ficha ampliada cuando está disponible.
+            Ordenados desde Primera División hacia Sub-15 y OFI, con club,
+            competencia, posición y ficha ampliada cuando está disponible.
           </p>
         </div>
 
-        <div data-testid="players-filters" className="flex flex-col md:flex-row md:items-center gap-4 mb-12">
+        <div
+          data-testid="players-filters"
+          className="flex flex-col md:flex-row md:items-center gap-4 mb-12"
+        >
           <div className="flex flex-wrap gap-2 flex-1">
             {FILTERS.map((f) => (
               <button
@@ -488,9 +639,14 @@ export default function Players() {
         </div>
 
         {loading ? (
-          <div className="text-white/50 text-center py-20">Cargando jugadores...</div>
+          <div className="text-white/50 text-center py-20">
+            Cargando jugadores...
+          </div>
         ) : grouped.length === 0 ? (
-          <div data-testid="players-empty" className="text-white/50 text-center py-20 border border-white/5">
+          <div
+            data-testid="players-empty"
+            className="text-white/50 text-center py-20 border border-white/5"
+          >
             No hay jugadores en esta categoría.
           </div>
         ) : (
@@ -508,7 +664,12 @@ export default function Players() {
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                   {arr.map((p, i) => (
-                    <PlayerCard key={p.id} p={p} index={i} onSelect={setSelectedPlayer} />
+                    <PlayerCard
+                      key={p.id}
+                      p={p}
+                      index={i}
+                      onSelect={setSelectedPlayer}
+                    />
                   ))}
                 </div>
               </div>
@@ -517,8 +678,10 @@ export default function Players() {
         )}
       </div>
 
-      <PlayerModal player={selectedPlayer} onClose={() => setSelectedPlayer(null)} />
+      <PlayerModal
+        player={selectedPlayer}
+        onClose={() => setSelectedPlayer(null)}
+      />
     </section>
   );
 }
-
