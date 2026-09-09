@@ -188,11 +188,12 @@
     "order": 105,
     "position": null,
     "club": "Sportivo Bella Italia",
-    "photo_url": "/photos/gallery/brian-sanchez/01.jpg",
+    "photo_url": "/photos/gallery/brian-sanchez/00.jpg",
     "transfermarkt_url": null,
     "info_url": null,
-    "competition": "Primera Divisional C",
+    "competition": "Segunda División Uruguaya",
     "gallery": [
+      "/photos/gallery/brian-sanchez/00.jpg",
       "/photos/gallery/brian-sanchez/01.jpg",
       "/photos/gallery/brian-sanchez/02.jpg",
       "/photos/gallery/brian-sanchez/03.jpg",
@@ -212,15 +213,15 @@
       "/photos/gallery/brian-sanchez/17.jpg",
       "/photos/gallery/brian-sanchez/18.jpg"
     ],
-    "profile": "Brian Sanchez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Primera Divisional C.",
+    "profile": "Brian Sanchez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Segunda División Uruguaya.",
     "stats_highlights": [
       "Club: Sportivo Bella Italia",
       "Categoría: Primera División",
-      "Competencia: Primera Divisional C"
+      "Competencia: Segunda División Uruguaya"
     ],
     "career_history": [
       "Sportivo Bella Italia · Club actual",
-      "Primera Divisional C · Plantel principal"
+      "Segunda División Uruguaya · Plantel principal"
     ],
     "current_club": "Sportivo Bella Italia"
   },
@@ -231,11 +232,12 @@
     "order": 106,
     "position": null,
     "club": "Sportivo Bella Italia",
-    "photo_url": "/photos/gallery/diego-nunez/01.jpg",
+    "photo_url": "/photos/gallery/diego-nunez/00.jpg",
     "transfermarkt_url": null,
     "info_url": null,
-    "competition": "Primera Divisional C",
+    "competition": "Segunda División Uruguaya",
     "gallery": [
+      "/photos/gallery/diego-nunez/00.jpg",
       "/photos/gallery/diego-nunez/01.jpg",
       "/photos/gallery/diego-nunez/02.jpg",
       "/photos/gallery/diego-nunez/03.jpg",
@@ -247,15 +249,15 @@
       "/photos/gallery/diego-nunez/09.jpg",
       "/photos/gallery/diego-nunez/10.jpg"
     ],
-    "profile": "Diego Nuñez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Primera Divisional C.",
+    "profile": "Diego Nuñez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Segunda División Uruguaya.",
     "stats_highlights": [
       "Club: Sportivo Bella Italia",
       "Categoría: Primera División",
-      "Competencia: Primera Divisional C"
+      "Competencia: Segunda División Uruguaya"
     ],
     "career_history": [
       "Sportivo Bella Italia · Club actual",
-      "Primera Divisional C · Plantel principal"
+      "Segunda División Uruguaya · Plantel principal"
     ],
     "current_club": "Sportivo Bella Italia"
   },
@@ -435,8 +437,8 @@
     "category": "Primera División",
     "order": 112,
     "position": "Defensa",
-    "club": "Bella Vista",
-    "photo_url": null,
+    "club": "Club Atlético Bella Vista",
+    "photo_url": "/photos/gallery/alexis-larzabal/01.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "Primera Divisional C",
@@ -445,7 +447,9 @@
     "nationality": "Uruguayo",
     "current_club": "Club Atlético Bella Vista",
     "agent": "Footwork Agency",
-    "gallery": [],
+    "gallery": [
+      "/photos/gallery/alexis-larzabal/01.jpg"
+    ],
     "profile": "Alexis Larzabal es nuevo jugador representado por Footwork Agency. Integra el plantel principal de Club Atlético Bella Vista y compite en Primera Divisional C.",
     "stats_highlights": [
       "Club: Club Atlético Bella Vista",
@@ -465,7 +469,7 @@
     "order": 113,
     "position": "Extremo izquierdo",
     "club": "CA Talleres (Remedios de Escalada)",
-    "photo_url": null,
+    "photo_url": "/photos/gallery/juan-pablo-arango/01.jpg",
     "transfermarkt_url": "https://www.transfermarkt.es/juan-pablo-arango/profil/spieler/1037211",
     "info_url": null,
     "competition": "Primera B Metropolitana",
@@ -476,7 +480,9 @@
     "nationality": "Argentino",
     "current_club": "CA Talleres (Remedios de Escalada)",
     "agent": "Footwork Agency",
-    "gallery": [],
+    "gallery": [
+      "/photos/gallery/juan-pablo-arango/01.jpg"
+    ],
     "profile": "Juan Pablo Arango integra la nómina de jugadores representados por Footwork Agency. Se desempeña como extremo izquierdo y forma parte del plantel principal de CA Talleres de Remedios de Escalada, club de la Primera B Metropolitana de Argentina.",
     "stats_highlights": [
       "Club: CA Talleres (Remedios de Escalada)",
@@ -1197,13 +1203,15 @@
     "order": 406,
     "position": "Volante central",
     "club": "Miramar Misiones",
-    "photo_url": null,
+    "photo_url": "/photos/gallery/yosemir-avelino/01.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "Sub-17 AUF",
     "current_club": "Miramar Misiones",
     "agent": "Footwork Agency",
-    "gallery": [],
+    "gallery": [
+      "/photos/gallery/yosemir-avelino/01.jpg"
+    ],
     "profile": "Yosemir Avelino integra la nómina de jugadores representados por Footwork Agency. Se desempeña como volante central en la categoría Sub-17 de Miramar Misiones.",
     "stats_highlights": [
       "Club: Miramar Misiones",
