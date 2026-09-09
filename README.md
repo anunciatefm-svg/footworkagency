@@ -69,7 +69,7 @@ Abre `http://localhost:3000`.
 
 ## 📞 Datos institucionales
 
-- **WhatsApp:** +598 98 681 610
+- **WhatsApp:** +598 93 354 131
 - **Email:** footworkag@gmail.com
 - **Instagram:** [@footworkagency](https://www.instagram.com/footworkagency/)
 - **Transfermarkt:** [Perfil oficial](https://www.transfermarkt.es/footwork-agency/beraterfirma/berater/11936)
