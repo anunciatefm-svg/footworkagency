@@ -212,7 +212,7 @@
       "/photos/gallery/brian-sanchez/17.jpg",
       "/photos/gallery/brian-sanchez/18.jpg"
     ],
-    "profile": "Brian Sanchez integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Sportivo Bella Italia. Competencia: Primera Divisional C. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Brian Sanchez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Primera Divisional C.",
     "stats_highlights": [
       "Club: Sportivo Bella Italia",
       "Categoría: Primera División",
@@ -220,8 +220,9 @@
     ],
     "career_history": [
       "Sportivo Bella Italia · Club actual",
-      "Primera Divisional C · Competencia"
-    ]
+      "Primera Divisional C · Plantel principal"
+    ],
+    "current_club": "Sportivo Bella Italia"
   },
   {
     "id": "diego-nunez",
@@ -246,7 +247,7 @@
       "/photos/gallery/diego-nunez/09.jpg",
       "/photos/gallery/diego-nunez/10.jpg"
     ],
-    "profile": "Diego Nuñez integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Sportivo Bella Italia. Competencia: Primera Divisional C. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Diego Nuñez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Sportivo Bella Italia. Competencia: Primera Divisional C.",
     "stats_highlights": [
       "Club: Sportivo Bella Italia",
       "Categoría: Primera División",
@@ -254,8 +255,9 @@
     ],
     "career_history": [
       "Sportivo Bella Italia · Club actual",
-      "Primera Divisional C · Competencia"
-    ]
+      "Primera Divisional C · Plantel principal"
+    ],
+    "current_club": "Sportivo Bella Italia"
   },
   {
     "id": "nahuel-rosano",
@@ -317,11 +319,11 @@
   },
   {
     "id": "sofia-olivera",
-    "name": "Sofia Olivera",
+    "name": "Sofía Olivera",
     "category": "Primera División",
     "order": 109,
     "position": null,
-    "club": "Nacional",
+    "club": "Club Nacional de Football",
     "photo_url": "/photos/gallery/sofia-olivera/01.jpg",
     "transfermarkt_url": null,
     "info_url": null,
@@ -334,15 +336,158 @@
       "/photos/gallery/sofia-olivera/05.jpg",
       "/photos/gallery/sofia-olivera/06.jpg"
     ],
-    "profile": "Sofia Olivera integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Nacional. Competencia: Fútbol femenino. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Sofía Olivera integra la nómina de jugadoras representadas por Footwork Agency. Actualmente está vinculada a Club Nacional de Football y compite en Primera División de fútbol femenino.",
     "stats_highlights": [
-      "Club: Nacional",
+      "Club: Club Nacional de Football",
       "Categoría: Primera División",
       "Competencia: Fútbol femenino"
     ],
     "career_history": [
-      "Nacional · Club actual",
-      "Fútbol femenino · Competencia"
+      "Club Nacional de Football · Club actual",
+      "Primera División · Fútbol femenino"
+    ],
+    "current_club": "Club Nacional de Football"
+  },
+  {
+    "id": "thiago-rodriguez",
+    "name": "Thiago Rodríguez",
+    "category": "Primera División",
+    "order": 110,
+    "position": "Interior izquierdo",
+    "club": "Plaza Colonia",
+    "photo_url": "/photos/gallery/thiago-rodriguez/01.jpg",
+    "transfermarkt_url": "https://www.transfermarkt.es/thiago-rodriguez/profil/spieler/1568193",
+    "info_url": null,
+    "competition": "Primera División",
+    "gallery": [
+      "/photos/gallery/thiago-rodriguez/01.jpg",
+      "/photos/gallery/thiago-rodriguez/02.jpg",
+      "/photos/gallery/thiago-rodriguez/03.jpg",
+      "/photos/gallery/thiago-rodriguez/04.jpg",
+      "/photos/gallery/thiago-rodriguez/05.jpg",
+      "/photos/gallery/thiago-rodriguez/06.jpg",
+      "/photos/gallery/thiago-rodriguez/07.jpg",
+      "/photos/gallery/thiago-rodriguez/08.jpg"
+    ],
+    "profile": "Thiago Rodríguez integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel de Primera División de Plaza Colonia. Se desempeña principalmente como interior izquierdo y también puede actuar por la banda izquierda.",
+    "stats_highlights": [
+      "Club: Plaza Colonia",
+      "Posición: Interior izquierdo",
+      "Categoría: Primera División",
+      "Generación: 2008"
+    ],
+    "career_history": [
+      "San Lorenzo · Formación",
+      "Club Plaza Colonia · Club actual",
+      "Primera División · Plantel principal"
+    ],
+    "year": 2008,
+    "height": "1,80 mts",
+    "age": "18 años",
+    "strong_foot": "Izquierda",
+    "nationality": "Uruguayo",
+    "current_club": "Club Plaza Colonia",
+    "agent": "Footwork Agency"
+  },
+  {
+    "id": "dilan-ilarraz",
+    "name": "Dilan Ilarraz",
+    "category": "Primera División",
+    "order": 111,
+    "position": "Extremo derecho",
+    "club": "Tacuarembó FC",
+    "photo_url": "/photos/gallery/dilan-ilarraz/01.jpg",
+    "transfermarkt_url": "https://www.transfermarkt.us/dilan-ilarraz/profil/spieler/1563182",
+    "info_url": null,
+    "competition": "Segunda División",
+    "gallery": [
+      "/photos/gallery/dilan-ilarraz/01.jpg",
+      "/photos/gallery/dilan-ilarraz/02.jpg",
+      "/photos/gallery/dilan-ilarraz/03.jpg",
+      "/photos/gallery/dilan-ilarraz/04.jpg",
+      "/photos/gallery/dilan-ilarraz/05.jpg",
+      "/photos/gallery/dilan-ilarraz/06.jpg",
+      "/photos/gallery/dilan-ilarraz/07.jpg",
+      "/photos/gallery/dilan-ilarraz/08.jpg",
+      "/photos/gallery/dilan-ilarraz/09.jpg",
+      "/photos/gallery/dilan-ilarraz/10.jpg"
+    ],
+    "profile": "Dilan Ilarraz integra la nómina de jugadores representados por Footwork Agency y forma parte del plantel principal de Tacuarembó FC. Se desempeña como extremo derecho y compite a nivel profesional.",
+    "stats_highlights": [
+      "Club: Tacuarembó FC",
+      "Posición: Extremo derecho",
+      "Categoría: Primera División",
+      "Competencia: Segunda División"
+    ],
+    "career_history": [
+      "Tacuarembó FC · Club actual",
+      "Segunda División · Plantel principal"
+    ],
+    "year": 2008,
+    "age": "18 años",
+    "nationality": "Uruguayo",
+    "current_club": "Tacuarembó FC",
+    "agent": "Footwork Agency"
+  },
+  {
+    "id": "alexis-larzabal",
+    "name": "Alexis Larzabal",
+    "category": "Primera División",
+    "order": 112,
+    "position": "Defensa",
+    "club": "Bella Vista",
+    "photo_url": null,
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "Primera Divisional C",
+    "year": 2004,
+    "age": "22 años",
+    "nationality": "Uruguayo",
+    "current_club": "Club Atlético Bella Vista",
+    "agent": "Footwork Agency",
+    "gallery": [],
+    "profile": "Alexis Larzabal es nuevo jugador representado por Footwork Agency. Integra el plantel principal de Club Atlético Bella Vista y compite en Primera Divisional C.",
+    "stats_highlights": [
+      "Club: Club Atlético Bella Vista",
+      "Posición: Defensa",
+      "Categoría: Primera División",
+      "Competencia: Primera Divisional C"
+    ],
+    "career_history": [
+      "Club Atlético Bella Vista · Club actual",
+      "Primera Divisional C · Plantel principal"
+    ]
+  },
+  {
+    "id": "juan-pablo-arango",
+    "name": "Juan Pablo Arango",
+    "category": "Primera División",
+    "order": 113,
+    "position": "Extremo izquierdo",
+    "club": "CA Talleres (Remedios de Escalada)",
+    "photo_url": null,
+    "transfermarkt_url": "https://www.transfermarkt.es/juan-pablo-arango/profil/spieler/1037211",
+    "info_url": null,
+    "competition": "Primera B Metropolitana",
+    "year": 2005,
+    "height": "1,65 mts",
+    "age": "21 años",
+    "strong_foot": "Izquierda",
+    "nationality": "Argentino",
+    "current_club": "CA Talleres (Remedios de Escalada)",
+    "agent": "Footwork Agency",
+    "gallery": [],
+    "profile": "Juan Pablo Arango integra la nómina de jugadores representados por Footwork Agency. Se desempeña como extremo izquierdo y forma parte del plantel principal de CA Talleres de Remedios de Escalada, club de la Primera B Metropolitana de Argentina.",
+    "stats_highlights": [
+      "Club: CA Talleres (Remedios de Escalada)",
+      "Posición: Extremo izquierdo",
+      "Categoría: Primera División",
+      "Competencia: Primera B Metropolitana"
+    ],
+    "career_history": [
+      "Estudiantes de La Plata · Formación y reserva",
+      "CA Talleres (Remedios de Escalada) · Club actual",
+      "Primera B Metropolitana · Plantel principal"
     ]
   },
   {
@@ -411,38 +556,6 @@
     "career_history": [
       "Juventud · Club actual",
       "Torneo Apertura - Divisional A · Competencia"
-    ]
-  },
-  {
-    "id": "thiago-rodriguez",
-    "name": "Thiago Rodriguez",
-    "category": "Sub-19",
-    "order": 202,
-    "position": null,
-    "club": "Plaza Colonia",
-    "photo_url": "/photos/gallery/thiago-rodriguez/01.jpg",
-    "transfermarkt_url": null,
-    "info_url": null,
-    "competition": "Torneo Apertura - Divisional B1",
-    "gallery": [
-      "/photos/gallery/thiago-rodriguez/01.jpg",
-      "/photos/gallery/thiago-rodriguez/02.jpg",
-      "/photos/gallery/thiago-rodriguez/03.jpg",
-      "/photos/gallery/thiago-rodriguez/04.jpg",
-      "/photos/gallery/thiago-rodriguez/05.jpg",
-      "/photos/gallery/thiago-rodriguez/06.jpg",
-      "/photos/gallery/thiago-rodriguez/07.jpg",
-      "/photos/gallery/thiago-rodriguez/08.jpg"
-    ],
-    "profile": "Thiago Rodriguez integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Plaza Colonia. Competencia: Torneo Apertura - Divisional B1. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
-    "stats_highlights": [
-      "Club: Plaza Colonia",
-      "Categoría: Sub-19",
-      "Competencia: Torneo Apertura - Divisional B1"
-    ],
-    "career_history": [
-      "Plaza Colonia · Club actual",
-      "Torneo Apertura - Divisional B1 · Competencia"
     ]
   },
   {
@@ -620,40 +733,6 @@
     ],
     "career_history": [
       "Salto · Club actual",
-      "Copa Oro B1 · Competencia"
-    ]
-  },
-  {
-    "id": "dilan-ilarraz",
-    "name": "Dilan Ilarraz",
-    "category": "Sub-19",
-    "order": 209,
-    "position": null,
-    "club": "Tacuarembo",
-    "photo_url": "/photos/gallery/dilan-ilarraz/01.jpg",
-    "transfermarkt_url": null,
-    "info_url": null,
-    "competition": "Copa Oro B1",
-    "gallery": [
-      "/photos/gallery/dilan-ilarraz/01.jpg",
-      "/photos/gallery/dilan-ilarraz/02.jpg",
-      "/photos/gallery/dilan-ilarraz/03.jpg",
-      "/photos/gallery/dilan-ilarraz/04.jpg",
-      "/photos/gallery/dilan-ilarraz/05.jpg",
-      "/photos/gallery/dilan-ilarraz/06.jpg",
-      "/photos/gallery/dilan-ilarraz/07.jpg",
-      "/photos/gallery/dilan-ilarraz/08.jpg",
-      "/photos/gallery/dilan-ilarraz/09.jpg",
-      "/photos/gallery/dilan-ilarraz/10.jpg"
-    ],
-    "profile": "Dilan Ilarraz integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Tacuarembo. Competencia: Copa Oro B1. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
-    "stats_highlights": [
-      "Club: Tacuarembo",
-      "Categoría: Sub-19",
-      "Competencia: Copa Oro B1"
-    ],
-    "career_history": [
-      "Tacuarembo · Club actual",
       "Copa Oro B1 · Competencia"
     ]
   },
@@ -1112,6 +1191,33 @@
     ]
   },
   {
+    "id": "yosemir-avelino",
+    "name": "Yosemir Avelino",
+    "category": "Sub-17",
+    "order": 406,
+    "position": "Volante central",
+    "club": "Miramar Misiones",
+    "photo_url": null,
+    "transfermarkt_url": null,
+    "info_url": null,
+    "competition": "Sub-17 AUF",
+    "current_club": "Miramar Misiones",
+    "agent": "Footwork Agency",
+    "gallery": [],
+    "profile": "Yosemir Avelino integra la nómina de jugadores representados por Footwork Agency. Se desempeña como volante central en la categoría Sub-17 de Miramar Misiones.",
+    "stats_highlights": [
+      "Club: Miramar Misiones",
+      "Posición: Volante central",
+      "Categoría: Sub-17",
+      "Competencia: AUF"
+    ],
+    "career_history": [
+      "Club Atlético Polancos · Etapa anterior",
+      "Miramar Misiones · Club actual",
+      "Sub-17 AUF · Competencia"
+    ]
+  },
+  {
     "id": "lautaro-alberro",
     "name": "Lautaro Alberro",
     "category": "Sub-16",
@@ -1350,7 +1456,7 @@
     "category": "Sub-15",
     "order": 600,
     "position": null,
-    "club": "Albion",
+    "club": "Montevideo City Torque",
     "photo_url": "/photos/gallery/ignacio-benero/01.jpg",
     "transfermarkt_url": null,
     "info_url": null,
@@ -1360,16 +1466,18 @@
       "/photos/gallery/ignacio-benero/02.jpg",
       "/photos/gallery/ignacio-benero/03.jpg"
     ],
-    "profile": "Ignacio Benero integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Albion. Competencia: Torneo Apertura - Divisional A. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Ignacio Benero integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Montevideo City Torque. Competencia: Torneo Apertura - Divisional A. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
     "stats_highlights": [
-      "Club: Albion",
+      "Club: Montevideo City Torque",
       "Categoría: Sub-15",
       "Competencia: Torneo Apertura - Divisional A"
     ],
     "career_history": [
-      "Albion · Club actual",
+      "Albion · Etapa anterior",
+      "Montevideo City Torque · Club actual",
       "Torneo Apertura - Divisional A · Competencia"
-    ]
+    ],
+    "current_club": "Montevideo City Torque"
   },
   {
     "id": "ramiro-mombrum",

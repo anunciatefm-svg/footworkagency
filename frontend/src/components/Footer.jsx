@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, ExternalLink, MessageCircle, Mail } from "lucide-react";
-import { LOGO_URL, LINKS, CONTACT_EMAIL } from "../lib/constants";
+import { LOGO_URL, LINKS, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from "../lib/constants";
 
 const QUICK = [
   { label: "Inicio", id: "inicio" },
@@ -59,7 +59,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a data-testid="footer-whatsapp-link" href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-white/75 hover:text-white transition-colors group">
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span className="text-sm">+598 98 681 610</span>
+                <span className="text-sm">{CONTACT_PHONE_DISPLAY}</span>
                 <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <a data-testid="footer-email-link" href={LINKS.email} className="inline-flex items-center gap-3 text-white/75 hover:text-white transition-colors group">
@@ -73,7 +73,7 @@ export default function Footer() {
               </a>
               <a data-testid="footer-linkedin-link" href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-white/75 hover:text-white transition-colors group">
                 <Linkedin className="w-4 h-4 text-[#5BB6FF]" />
-                <span className="text-sm">LinkedIn — Emiliano Martínez</span>
+                <span className="text-sm">LinkedIn — Footwork Agency</span>
                 <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
               <a data-testid="footer-transfermarkt-link" href={LINKS.transfermarkt} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-white/75 hover:text-white transition-colors group">

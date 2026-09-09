@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { Instagram, Linkedin, ExternalLink, Send, MessageCircle, Mail, MapPin } from "lucide-react";
-import { LINKS, WHATSAPP_NUMBER, CONTACT_EMAIL, RESIDENCIA, AURUM } from "../lib/constants";
+import { LINKS, WHATSAPP_NUMBER, CONTACT_PHONE_DISPLAY, CONTACT_EMAIL, RESIDENCIA, AURUM, OFFICE_ADDRESS } from "../lib/constants";
 
 const PROFILES = ["Jugador", "Club", "Familia", "Convenio", "Otro"];
 
@@ -64,7 +64,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-[10px] uppercase tracking-widest text-white/50">WhatsApp</div>
-                  <div className="text-white font-medium truncate">+598 98 681 610</div>
+                  <div className="text-white font-medium truncate">{CONTACT_PHONE_DISPLAY}</div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#5BB6FF]" />
               </a>
@@ -113,7 +113,7 @@ export default function Contact() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-[10px] uppercase tracking-widest text-white/50">LinkedIn</div>
-                  <div className="text-white font-medium truncate">Emiliano Martínez</div>
+                  <div className="text-white font-medium truncate">Footwork Agency</div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#5BB6FF]" />
               </a>
@@ -132,6 +132,13 @@ export default function Contact() {
                 <span>
                   <span className="uppercase tracking-widest text-white/40 text-[10px] block mb-0.5">Clínica Aurum</span>
                   {AURUM.address}
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#5BB6FF] mt-0.5 shrink-0" />
+                <span>
+                  <span className="uppercase tracking-widest text-white/40 text-[10px] block mb-0.5">Oficina Footwork Agency</span>
+                  {OFFICE_ADDRESS}
                 </span>
               </div>
             </div>

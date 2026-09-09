@@ -56,7 +56,7 @@ const photoCandidates = (p) => {
 
   // 2) Aunque players.json no traiga gallery actualizado en Vercel,
   // probamos automáticamente la carpeta por id del jugador.
-  if (p.id) {
+  if (p.id && (p.photo_url || (Array.isArray(p.gallery) && p.gallery.length > 0))) {
     for (let i = 1; i <= 30; i += 1) {
       addUniquePhoto(
         list,
@@ -68,7 +68,7 @@ const photoCandidates = (p) => {
 
   // 3) Fallback viejo que ya existe en /public/photos.
   addUniquePhoto(list, p.photo_url);
-  if (p.id) {
+  if (p.id && (p.photo_url || (Array.isArray(p.gallery) && p.gallery.length > 0))) {
     addUniquePhoto(list, `/photos/${p.id}.jpg`);
     addUniquePhoto(list, `/photos/${p.id}.png`);
     addUniquePhoto(list, `/photos/${p.id}.jpeg`);
