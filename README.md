@@ -1,61 +1,74 @@
 # Footwork Agency — Web oficial
 
-Sitio web institucional 100 % estático. Sin backend, sin base de datos, sin servicios externos. Todo se edita desde GitHub y Vercel publica solo.
+Sitio web institucional desarrollado con React. El contenido de jugadores y equipo se guarda en archivos JSON: no requiere backend ni una base de datos. El repositorio incluye fotografías y documentos para servirlos desde el mismo dominio en Vercel.
 
----
+## Actualización del 29 de octubre de 2026
 
-## ✏️ Cómo editar contenido
+Se incorporaron los pedidos de Emiliano Martínez del **9 y 11 de setiembre de 2026**:
 
-### Cambiar jugadores
-Editá [`frontend/src/data/players.json`](frontend/src/data/players.json). Estructura por jugador:
+- **Rodrigo Pintado** — Sportivo Bella Italia, Primera División C. Foto y enlace a Transfermarkt.
+- **Fabricio Vidal** — Sportivo Bella Italia, Primera División C. Foto y enlace a Transfermarkt.
+- **Emiliano Melo** — CSyD Paso de la Arena, Divisional D. Foto y enlace a Transfermarkt.
+- **Agustín Linares** — CSyD Paso de la Arena, Divisional D. Foto; no se informó enlace a Transfermarkt.
+- **Mauro Alonso** y **Fernando Flori** — sus tarjetas del equipo permiten abrir el perfil y consultar o descargar las licencias FIFA originales recibidas por WhatsApp.
+- **Iván Amaya** — eliminado de la estructura.
+- **Facundo Moreira** — se actualizó su imagen principal y el club a Deportivo Maldonado. Se conserva la fotografía anterior en la galería. Por su generación 2009 se muestra en Sub-17. La competencia actual precisa no fue indicada por el cliente y se dejó sin especificar.
+
+Se corrigieron los enlaces a fotos inexistentes de Joaquín Parceriza, se eliminó una gran copia duplicada e innecesaria del listado de jugadores y se usa el logo local para no depender de un dominio externo. También se habilitó el cierre con la tecla Escape en fichas de jugadores y del equipo.
+
+**Nota:** Las altas y cambios se basan en los mensajes escritos y archivos adjuntos del chat. Los mensajes de voz no fueron transcritos, por lo que cualquier instrucción exclusiva de los audios debe contrastarse con el cliente antes de publicar.
+
+## Modificar el plantel
+
+Archivo: `frontend/src/data/players.json`.
 
 ```json
 {
-  "id": "alvaro-san-emeterio",
-  "name": "Alvaro San Emeterio",
+  "id": "nombre-apellido",
+  "name": "Nombre Apellido",
   "category": "Primera División",
-  "order": 100,
-  "position": "Defensa central",
-  "club": "Club X",
-  "photo_url": "/photos/alvaro-san-emeterio.jpg",
-  "transfermarkt_url": "https://www.transfermarkt.es/...",
+  "order": 118,
+  "position": null,
+  "club": "Club",
+  "competition": "Divisional",
+  "photo_url": "/photos/gallery/nombre-apellido/01.jpg",
+  "gallery": ["/photos/gallery/nombre-apellido/01.jpg"],
+  "transfermarkt_url": null,
   "info_url": null
 }
 ```
 
-- **Agregar jugador:** copiá un objeto del JSON, cambialo, ponele un `order` mayor en su categoría.
-- **Cambiar categoría:** una de `Primera División`, `Sub-19`, `Sub-18`, `Sub-17`, `Sub-16`, `Sub-15`.
-- **Borrar jugador:** eliminás el objeto del JSON.
+Categorías: `Primera División`, `Sub-19`, `Sub-17`, `Sub-16`, `Sub-15` y `Jugadores OFI`. La categoría se usa como agrupación de la web; la competición específica va en el campo `competition`. Si no tenés un dato, dejalo en `null` en lugar de inventarlo. Los archivos deben existir exactamente con la ruta declarada.
 
-### Sumar foto nueva
-1. Subí el archivo a `frontend/public/photos/` (formato `.jpg`, ideal 800 × 1000 px, < 200 KB).
-2. Llamalo igual que el `id` del jugador: `juan-perez.jpg`.
-3. En el JSON, completá `"photo_url": "/photos/juan-perez.jpg"`.
+## Actualizar la estructura y los documentos
 
-### Cambiar el equipo / estructura
-Editá [`frontend/src/data/team.json`](frontend/src/data/team.json). Mismo principio.
+Archivo: `frontend/src/data/team.json`. Los perfiles con biografía, LinkedIn o documentos son clicables. Las licencias PDF están en `frontend/public/documents/`.
 
-### Cambiar textos de servicios, timeline, residencia, etc.
-Están en [`frontend/src/lib/constants.js`](frontend/src/lib/constants.js).
+Para agregar documentos a un integrante:
 
----
+```json
+"documents": [
+  {
+    "title": "Nombre del documento",
+    "url": "/documents/nombre-del-archivo.pdf",
+    "type": "PDF"
+  }
+]
+```
 
-## 🚀 Deploy en Vercel
+Las acreditaciones son documentos que remitió el cliente; mostrarlas no implica una comprobación en tiempo real de la vigencia del registro FIFA.
 
-1. Importá este repo en [vercel.com/new](https://vercel.com/new).
-2. Vercel detecta `vercel.json` y configura todo solo. Si te pregunta:
-   - Framework Preset: **Other**
-   - Install Command: `cd frontend && npm install --legacy-peer-deps`
-   - Build Command: `cd frontend && CI=false npm run build`
-   - Output Directory: `frontend/build`
-3. **No requiere variables de entorno** — todo el contenido es estático.
-4. Click en Deploy. En 1–2 minutos está online.
+## Verificar el contenido
 
-Cada `git push` redeploya automáticamente. Las fotos viven en la CDN de Vercel (carga instantánea).
+Desde la carpeta principal, con Python 3 disponible:
 
----
+```bash
+python scripts/check_content.py
+```
 
-## 🛠️ Correr localmente
+Comprueba identificadores duplicados y rutas de imágenes e informes de jugadores y documentación del equipo.
+
+## Ejecución local
 
 ```bash
 cd frontend
@@ -63,15 +76,15 @@ npm install --legacy-peer-deps
 npm start
 ```
 
-Abre `http://localhost:3000`.
+Para compilar: `CI=false npm run build`.
 
----
+## Publicar en Vercel
 
-## 📞 Datos institucionales
+Importá el proyecto en Vercel utilizando el archivo `vercel.json` de la raíz. No hay variables de entorno obligatorias para los datos estáticos. Cada cambio publicado en el repositorio desplegado genera una nueva compilación.
 
-- **WhatsApp:** +598 93 354 131
-- **Email:** footworkag@gmail.com
-- **Instagram:** [@footworkagency](https://www.instagram.com/footworkagency/)
-- **Transfermarkt:** [Perfil oficial](https://www.transfermarkt.es/footwork-agency/beraterfirma/berater/11936)
-- **Residencia:** Enrique Turini 949, Prado, Montevideo
-- **Clínica Aurum:** Charrúa 2379, Montevideo
+## Contacto institucional
+
+- WhatsApp: +598 93 354 131
+- Correo: footworkag@gmail.com
+- Instagram: https://www.instagram.com/footworkagency/
+- LinkedIn: https://www.linkedin.com/company/footwork-agency/
