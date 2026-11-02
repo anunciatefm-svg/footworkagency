@@ -153,7 +153,7 @@
     "order": 104,
     "position": "Delantero centro",
     "club": "Salto",
-    "photo_url": "/photos/gallery/gustavo-bortoli/02.jpg",
+    "photo_url": "/photos/gallery/gustavo-bortoli/07.jpg",
     "transfermarkt_url": "https://www.transfermarkt.es/gustavo-bortoli/profil/spieler/1065193",
     "info_url": null,
     "competition": "Primera Divisional C",
@@ -161,6 +161,7 @@
     "nationality": "Uruguayo",
     "current_club": "Salto F.C.",
     "gallery": [
+      "/photos/gallery/gustavo-bortoli/07.jpg",
       "/photos/gallery/gustavo-bortoli/02.jpg",
       "/photos/gallery/gustavo-bortoli/01.jpg",
       "/photos/gallery/gustavo-bortoli/03.jpg",
@@ -1074,12 +1075,13 @@
     "category": "Sub-17",
     "order": 403,
     "position": null,
-    "club": "Albion",
-    "photo_url": "/photos/gallery/franco-lasalvia/01.jpg",
+    "club": "Deportivo Maldonado",
+    "photo_url": "/photos/gallery/franco-lasalvia/18.jpg",
     "transfermarkt_url": null,
     "info_url": null,
-    "competition": "Torneo Apertura - Divisional A",
+    "competition": null,
     "gallery": [
+      "/photos/gallery/franco-lasalvia/18.jpg",
       "/photos/gallery/franco-lasalvia/01.jpg",
       "/photos/gallery/franco-lasalvia/02.jpg",
       "/photos/gallery/franco-lasalvia/03.jpg",
@@ -1098,16 +1100,16 @@
       "/photos/gallery/franco-lasalvia/16.jpg",
       "/photos/gallery/franco-lasalvia/17.jpg"
     ],
-    "profile": "Franco Lasalvia integra la nómina de jugadores representados por Footwork Agency. Actualmente está vinculado a Albion. Competencia: Torneo Apertura - Divisional A. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Futbolista Sub-17 de Deportivo Maldonado. Actualización de club y fotografía informada por Footwork Agency el 29 de octubre de 2026.",
     "stats_highlights": [
-      "Club: Albion",
-      "Categoría: Sub-17",
-      "Competencia: Torneo Apertura - Divisional A"
+      "Club: Deportivo Maldonado",
+      "Categoría: Sub-17"
     ],
     "career_history": [
-      "Albion · Club actual",
-      "Torneo Apertura - Divisional A · Competencia"
-    ]
+      "Albion · Etapa anterior",
+      "Deportivo Maldonado · Club actual"
+    ],
+    "current_club": "Deportivo Maldonado"
   },
   {
     "id": "mateo-ramos",
@@ -1176,13 +1178,14 @@
     "order": 406,
     "position": "Volante central",
     "club": "Miramar Misiones",
-    "photo_url": "/photos/gallery/yosemir-avelino/01.jpg",
+    "photo_url": "/photos/gallery/yosemir-avelino/02.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "Sub-17 AUF",
     "current_club": "Miramar Misiones",
     "agent": "Footwork Agency",
     "gallery": [
+      "/photos/gallery/yosemir-avelino/02.jpg",
       "/photos/gallery/yosemir-avelino/01.jpg"
     ],
     "profile": "Yosemir Avelino integra la nómina de jugadores representados por Footwork Agency. Se desempeña como volante central en la categoría Sub-17 de Miramar Misiones.",
@@ -1576,15 +1579,15 @@
     "category": "Sub-17",
     "order": 407,
     "position": "Defensa central",
-    "club": "Atlético Fernandino",
-    "photo_url": "/photos/facundo-moreira.jpg",
+    "club": "Deportivo Maldonado",
+    "photo_url": "/photos/gallery/facundo-moreira/02.jpg",
     "transfermarkt_url": null,
     "info_url": null,
-    "competition": "Juveniles Auf",
+    "competition": null,
     "year": 2009,
     "gallery": [
-      "/photos/facundo-moreira.jpg",
-      "/photos/facundo-moreira.jpg"
+      "/photos/gallery/facundo-moreira/02.jpg",
+      "/photos/gallery/facundo-moreira/01.jpg"
     ],
     "profile": "Defensa central de la generación 2009. Footwork Agency informó su vinculación con Deportivo Maldonado el 11 de setiembre de 2026.",
     "stats_highlights": [
@@ -1687,6 +1690,38 @@
     "photo_url": "/photos/gallery/agustin-linares/01.jpg",
     "gallery": [
       "/photos/gallery/agustin-linares/01.jpg"
+    ]
+  },
+  {
+    "id": "juliana-viera",
+    "name": "Juliana Viera",
+    "category": "Primera División",
+    "order": 118,
+    "position": null,
+    "club": "CD Cuenca",
+    "competition": "Tercera Federación RFEF",
+    "photo_url": "/photos/gallery/juliana-viera/01.jpg",
+    "transfermarkt_url": null,
+    "info_url": "https://juliviera.com/es/",
+    "profile": "Jugadora de CD Cuenca en la Tercera Federación RFEF. Información facilitada por Footwork Agency el 29 de octubre de 2026.",
+    "gallery": [
+      "/photos/gallery/juliana-viera/01.jpg"
+    ]
+  },
+  {
+    "id": "joaquin-beltrame",
+    "name": "Joaquín Beltrame",
+    "category": "Sub-19",
+    "order": 217,
+    "position": null,
+    "club": "Bella Vista",
+    "competition": null,
+    "photo_url": "/photos/gallery/joaquin-beltrame/01.jpg",
+    "transfermarkt_url": "https://www.transfermarkt.es/joaquin-beltrame/profil/spieler/1607183",
+    "info_url": null,
+    "profile": "Jugador Sub-19 de Bella Vista. Información facilitada por Footwork Agency el 29 de octubre de 2026.",
+    "gallery": [
+      "/photos/gallery/joaquin-beltrame/01.jpg"
     ]
   }
 ]
