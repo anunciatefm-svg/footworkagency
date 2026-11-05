@@ -439,8 +439,8 @@
     "order": 112,
     "position": "Defensa",
     "club": "Club Atlético Bella Vista",
-    "photo_url": "/photos/gallery/alexis-larzabal/01.jpg",
-    "transfermarkt_url": null,
+    "photo_url": "/photos/gallery/alexis-larzabal/02.jpg",
+    "transfermarkt_url": "https://www.transfermarkt.es/alexis-larzabal/profil/spieler/1450958",
     "info_url": null,
     "competition": "Primera Divisional C",
     "year": 2004,
@@ -449,6 +449,7 @@
     "current_club": "Club Atlético Bella Vista",
     "agent": "Footwork Agency",
     "gallery": [
+      "/photos/gallery/alexis-larzabal/02.jpg",
       "/photos/gallery/alexis-larzabal/01.jpg"
     ],
     "profile": "Alexis Larzabal es nuevo jugador representado por Footwork Agency. Integra el plantel principal de Club Atlético Bella Vista y compite en Primera Divisional C.",
@@ -1287,7 +1288,7 @@
     "order": 502,
     "position": null,
     "club": "Racing",
-    "photo_url": null,
+    "photo_url": "/photos/gallery/gonzalo-fernandez/01.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": "Torneo Apertura - Divisional A",
@@ -1300,6 +1301,9 @@
     "career_history": [
       "Racing · Club actual",
       "Torneo Apertura - Divisional A · Competencia"
+    ],
+    "gallery": [
+      "/photos/gallery/gonzalo-fernandez/01.jpg"
     ]
   },
   {
@@ -1523,29 +1527,30 @@
   {
     "id": "tiziano-ganicoche",
     "name": "Tiziano Ganicoche",
-    "category": "Jugadores OFI",
-    "order": 701,
+    "category": "Sub-16",
+    "order": 507,
     "position": "Volante central",
-    "club": "Club Ceibal de Salto",
-    "photo_url": "/photos/gallery/tiziano-ganicoche/01.jpg",
+    "club": "Salto FC",
+    "photo_url": "/photos/gallery/tiziano-ganicoche/02.jpg",
     "transfermarkt_url": null,
     "info_url": null,
-    "competition": "OFI",
+    "competition": "AUF",
     "year": 2010,
     "gallery": [
+      "/photos/gallery/tiziano-ganicoche/02.jpg",
       "/photos/gallery/tiziano-ganicoche/01.jpg"
     ],
-    "profile": "Tiziano Ganicoche integra la nómina de jugadores representados por Footwork Agency. Se desempeña como volante central. Actualmente está vinculado a Club Ceibal de Salto. Competencia: OFI. Generación 2010. La ficha queda preparada para sumar videos, informes, fotos adicionales y material de seguimiento cuando la agencia lo requiera.",
+    "profile": "Tiziano Ganicoche integra la nómina de jugadores representados por Footwork Agency. Se desempeña como volante central y juega en Salto FC, categoría Sub-16. Generación 2010.",
     "stats_highlights": [
-      "Club: Club Ceibal de Salto",
+      "Club: Salto FC",
       "Posición: Volante central",
-      "Categoría: Jugadores OFI · 2010",
-      "Competencia: OFI"
+      "Categoría: Sub-16 · 2010",
+      "Competencia: AUF"
     ],
     "career_history": [
-      "Club Ceibal de Salto · Club actual",
-      "OFI · Competencia"
-    ]
+      "Salto FC · Club actual"
+    ],
+    "current_club": "Salto FC"
   },
   {
     "id": "franco-bortoluzzi",
@@ -1579,15 +1584,15 @@
     "category": "Sub-17",
     "order": 407,
     "position": "Defensa central",
-    "club": "Atlético Fernandino",
-    "photo_url": "/photos/gallery/facundo-moreira.jpg",
+    "club": "Deportivo Maldonado",
+    "photo_url": "/photos/gallery/facundo-moreira/02.jpg",
     "transfermarkt_url": null,
     "info_url": null,
     "competition": null,
     "year": 2009,
     "gallery": [
-      "/photos/facundo-moreira.jpg",
-      "/photos/facundo-moreira.jpg"
+      "/photos/gallery/facundo-moreira/02.jpg",
+      "/photos/gallery/facundo-moreira/01.jpg"
     ],
     "profile": "Defensa central de la generación 2009. Footwork Agency informó su vinculación con Deportivo Maldonado el 11 de setiembre de 2026.",
     "stats_highlights": [
@@ -1671,8 +1676,9 @@
     "transfermarkt_url": "https://www.transfermarkt.es/emiliano-melo/profil/spieler/999420",
     "info_url": null,
     "profile": "Jugador de CSyD Paso de la Arena, equipo que compite en Divisional D. Información facilitada por Footwork Agency el 9 de setiembre de 2026.",
-    "photo_url": "/photos/gallery/emiliano-melo/01.jpg",
+    "photo_url": "/photos/gallery/emiliano-melo/02.jpg",
     "gallery": [
+      "/photos/gallery/emiliano-melo/02.jpg",
       "/photos/gallery/emiliano-melo/01.jpg"
     ]
   },
@@ -1722,6 +1728,56 @@
     "profile": "Jugador Sub-19 de Bella Vista. Información facilitada por Footwork Agency el 29 de octubre de 2026.",
     "gallery": [
       "/photos/gallery/joaquin-beltrame/01.jpg"
+    ]
+  },
+  {
+    "id": "benjamin-da-silva",
+    "name": "Benjamín Da Silva",
+    "category": "Sub-16",
+    "order": 508,
+    "position": null,
+    "club": "Salto FC",
+    "competition": "AUF",
+    "year": 2010,
+    "photo_url": "/photos/gallery/benjamin-da-silva/01.jpg",
+    "gallery": [
+      "/photos/gallery/benjamin-da-silva/01.jpg"
+    ],
+    "transfermarkt_url": null,
+    "info_url": null,
+    "profile": "Jugador de la generación 2010 que integra la categoría Sub-16 de Salto FC, en AUF.",
+    "stats_highlights": [
+      "Club: Salto FC",
+      "Categoría: Sub-16 · 2010",
+      "Competencia: AUF"
+    ],
+    "career_history": [
+      "Salto FC · Club actual"
+    ]
+  },
+  {
+    "id": "benjamin-silva",
+    "name": "Benjamín Silva",
+    "category": "Sub-17",
+    "order": 408,
+    "position": null,
+    "club": "Estudiantes de La Plata",
+    "competition": "AFA",
+    "year": 2009,
+    "photo_url": "/photos/gallery/benjamin-silva/01.jpg",
+    "gallery": [
+      "/photos/gallery/benjamin-silva/01.jpg"
+    ],
+    "transfermarkt_url": null,
+    "info_url": null,
+    "profile": "Jugador de la generación 2009, categoría Sub-17 de Estudiantes de La Plata (AFA).",
+    "stats_highlights": [
+      "Club: Estudiantes de La Plata",
+      "Categoría: Sub-17 · 2009",
+      "Competencia: AFA"
+    ],
+    "career_history": [
+      "Estudiantes de La Plata · Club actual"
     ]
   }
 ]

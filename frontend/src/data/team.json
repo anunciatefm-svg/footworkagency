@@ -169,5 +169,19 @@
     "role": "Residencia de Jugadores",
     "featured": false,
     "order": 23
+  },
+  {
+    "id": "florencia-lacerot",
+    "name": "Florencia Lacerot",
+    "role": "Scouting",
+    "featured": false,
+    "order": 22
+  },
+  {
+    "id": "hernan-del-puerto",
+    "name": "Hernán del Puerto",
+    "role": "Gestión de Inversiones",
+    "featured": false,
+    "order": 24
   }
 ]
